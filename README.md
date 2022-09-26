@@ -1,32 +1,41 @@
-# COSC 516 - Cloud Databases<br/>Lab 1 - MySQL on Amazon RDS
+# COSC 516 - Cloud Databases<br/>Lab 2 -Microsoft Azure SQL
 
 ## Setup
 
-Create a Amazon AWS free tier account at: [https://aws.amazon.com/free](https://aws.amazon.com/free).
+Create a Azure free tier account at: [https://azure.microsoft.com/en-us/free/](https://azure.microsoft.com/en-us/free/).
 
 The free tier account allows for free trials forever and 12-months free offers from your sign up period. You will need an email address to use. The sign-up also asks for a credit card. If you do not have a credit card, then a pre-paid credit card with a small amount should work.
 
-## AWS Console
+## Azure Portal
 
-Login to AWS. In the AWS console, select `Database` then `RDS`.
+Login to Azure. In the Azure Portal, click on `More services` then select `Databases` category. Select `Azure SQL`.
 
-![AWS Console](img/2_aws_console_rds.png)
-![AWS RDS Dashboard](img/2b_aws_rds_dashboard.png)
+![Azure Portal](img/1_azure_portal.png)
+![Azure SQL Databases](img/2_azure_database.png)
 
-## Amazon RDS
+## Create Azure SQL Database
 
-Click on `Create database`. Select `MySQL` as the engine and `Free tier`. 
+Click on `Create SQL database`. Select first option with `Single database` and click `Create`. 
 
-<img src="img/3_create_mysql1.png" alt="Create MySQL Database" width="600">
+<img src="img/3_azure_single_db.png" alt="Create Azure SQL Database" width="600">
 
-For database identifier use `mysql516`. Select a master password for your database. The instance configuration is `db.t3.micro`. Leave storage as `General Purpose SSD`.
+For `Resource group` click `Create new` and use name `rg516`. For `Database name` use `cosc516`.
 
-<img src="img/3_create_mysql2.png" alt="Instance Configuration for MySQL Database" width="600">
-<img src="img/3_create_mysql3.png" alt="Storage Configuration for MySQL Database" width="600">
+<img src="img/4_create_db.png" alt="Create Azure SQL Database" width="600">
 
-For Connectivity, make sure to have public access as `Yes`. Select `Create new VPC` and `DB Subnet Group`. 
+For `Server` click `Create new` and use name `sqlserver516`. For authentication select `Use SQL authentication`. For user id, use `cosc516` and select your password. For `Location` use `Canada Central`.
 
-<img src="img/3_create_mysql4.png" alt="Connectivity Configuration for MySQL Database" width="600">
+<img src="img/5_db_server_setting.png" alt="Database Server Settings" width="600">
+
+Under `Compute + storage`, you can leave as `Standard S0`. Alternatively, you can click `Configure database` and change to `Basic DTU-based purchasing model`. 
+
+<img src="img/6_configure_db.png" alt="Configure Database Resources" width="600">
+
+Click `Next: Networking`. On `Connectivity method` select `Public endpoint`. Click `Yes` to `Add current client IP address`. Leave with `Default Connection policy`. Click `Review + create`. Click `Create`.
+
+<img src="img/7_config_network.png" alt="Configure Network Settings" width="600">
+
+<img src="img/8_review.png" alt="Review Settings" width="600">
 
 Leave database authentication as `Password authentication`. Click `Create database` to create the database.  It may take a few minutes to create the database.
 
