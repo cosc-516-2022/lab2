@@ -70,40 +70,22 @@ Database: (leave blank)
 
 ## Tasks
 
-To test your database, write Java code using VS Code. The file to edit is `MySQLonAWS.java`.  The test file is `TestMySQLonAWS.java`.  Fill in the methods requested (search for **TODO**).  Marks for each method are below.  You receive the marks if you pass the JUnit tests AND have followed the requirements asked in the question (including documentation and proper formatting).
+To test your database, write Java code using VS Code. The file to edit is `AzureSQL.java`.  The test file is `TestAzureSQL.java`.  Fill in the methods requested (search for **TODO**).  Marks for each method are below.  You receive the marks if you pass the JUnit tests AND have followed the requirements asked in the question (including documentation and proper formatting).
 
-- +1 mark - Method `connect()` to make a connection to the database.
-- +1 mark - Method `connectSSL()` to make a secure connection to the database. Requires updating database configuration on RDS.
-- +1 mark - Method `close()` to close the connection to the database.
-- +1 mark - Method `drop()` to drop the table "person" that we will be using.
-- +2 marks - Method `create()` to create a "person" table with fields:
-  	- id - integer, must auto-increment
-	- name - variable character field up to size 40
-	- salary - must hold up to 99,999,999.99 exactly
-	- birthdate - date
-	- last_update - timestamp	
-- +3 marks - Method `insert()` to add the following records.  **You must use PreparedStatements to get full marks.**	
-
-```
-name, salary, birthdate, last_update
-1, Ann Alden, 123000.00, 1986-03-04, 2022-01-04 11:30:30.0
-2, Bob Baron, 225423.00, 1993-12-02, 2022-01-04 12:30:25.0
-3, Chloe Cat, 99999999.99, 1999-01-15, 2022-01-04 12:25:45.0
-4, Don Denton, 91234.24, 2004-08-03, 2022-01-04 12:45:00.0
-5, Eddy Edwards, 55125125.25, 2003-05-17, 2022-01-05 23:00:00.0
-```
-
-- +1 mark - Write the method `delete()` to delete the person with name `'Bob Baron'`.</li>
-- +2 marks - Write the method `query1()` that returns the person name and salary where rows are sorted by salary descending.</li>
-- +2 marks - Write the method `query2()` that returns the person's last name and salary if the person's salary is greater than the average salary of all people.</li>
-- +2 marks - Write the method `query3()` that returns all fields of a pair of people where a pair of people is returned if the last_update field of their records have been updated less than an hour apart. Do not duplicate pairs.  Example: Only show (Ann, Bob) and not also (Bob, Ann).</li>
+- +1 mark - Write the method `connect()` to make a connection to the database.
+- +5 marks - Write the method `load()` to load the standard TPC-H data into the database. The DDL files are in the [ddl](ddl) folder. 
+- +1 mark - Write the method `close()` to close the connection to the database.
+- +2 marks - Write the method `drop()` to drop all the tables in the TPC-H database.
+- +2 marks - Write the method `query1()` that ...
+- +2 marks - Write the method `query2()` that ...
+- +2 marks - Write the method  `orderCount()` that **uses a transaction** and returns the number of orders for a given customer id.
+- +5 marks - Write the method `addOrder()` that **uses a transaction** to add an order and all lineitems to database assuming that the `ps_availqty` is >= `l_quantity` for all items that were requested to be ordered. Otherwise, transaction is denied.
 
 **Total Marks: 20**
 
-## Bonus Marks:
+## Bonus Marks: (up to 2)
 
-- +3 bonus marks for configuring multi-AZ fail-over and testing query when have failure (requires not using free-tier)
-- 
+Up to +2 bonus marks for demonstrating some other feature of Azure SQL
 
 ## Submission
 
