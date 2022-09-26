@@ -66,7 +66,7 @@ Host name: (see Azure portal)
 Port: (leave blank for default)
 Database: (leave blank)
 ```
-<img src="img/11_azure_squirrel.png" alt="Configuration for SQuirreL SQL Connection" width="300">
+<img src="img/11_azure_squirrel.png" alt="Configuration for SQuirreL SQL Connection" width="800">
 
 ## Tasks
 
