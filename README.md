@@ -37,37 +37,32 @@ Click `Next: Networking`. On `Connectivity method` select `Public endpoint`. Cli
 
 <img src="img/8_review.png" alt="Review Settings" width="600">
 
-Leave database authentication as `Password authentication`. Click `Create database` to create the database.  It may take a few minutes to create the database.
-
-<img src="img/3_create_mysql5.png" alt="Authentication Configuration for MySQL Database" width="600">
-
-## Configuring VPC and Network Access
-
-In addition to making the database public, you must also configure the database VPC to allow inbound traffic from your machine. A [virtual private cloud (VPC)](https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html) is a virtual network that is similar to a physical network. An administrator defines subnets, IP addresses, routing, and firewall information for their VPC. A database instance is created in a particular VPC, and the VPC must be configured to allow network access to it.
-
-Once the databsae is created, click on the database identifier to get to an overview screen. Click on the VPC security group (in the figure it is `default (sg-00bb5776c03caa8c6)`). Then select `Inbound rules`. 
-
-<img src="img/4_security_group.png" alt="Configure VPC security group" width="600">
-<img src="img/4b_security_group_config.png" alt="Configure VPC security group with Inbound IP Rule" width="600">
-
-Click on `Edit the inbound rules`. In the next screen, `Add rule` that allows all traffic from your IP address. Only your machine will have access to the database. You can add other rules as required.
-
-<img src="img/4c_vpc_add_inbound_ip.png" alt="VCP Add Inbound IP" width="600">
-
 ## Connecting to the Database
 
-Connecting to the database can be done using MySQL command line or using the MySQL Workbench GUI. This will show connecting using open source software SQuirreL that is used in other database courses. For more info, see [Connecting to MySQL on AWS RDS](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ConnectToInstance.html).
+Connecting to the database can be done using Azure Portl with `Query editor` or using open source software SQuirreL.
 
-### Accessing MySQL using SQuirreL SQL
+### Accessing using Query Editor
+
+In Azure Portal search for `SQL databases` and select database just created. The instance information provides the server name, connection strings, and the ability to query using the `Query editor (preview)`. 
+
+<img src="img/9_db_instance.png" alt="Review Settings" width="600">
+
+Test entering some SQL commands into the query editor.
+
+<img src="img/10_query_editor.png" alt="Review Settings" width="600">
+
+
+### Accessing using SQuirreL
+
 [SQuirreL](https://squirrel-sql.sourceforge.io/) is an open source graphical query tool capable of querying any JDBC-accessible database including Oracle, MySQL, and SQL Server.
 
 Start up SQuirreL. Register our MySQL server with the information:
 
 ```
-Name: 516_MySQL
-Login name: admin
-Password: (password used when created in AWS)
-Host name: (see RDS console)
+Name: 516_Azure
+Login name: cosc516
+Password: (password used when created)
+Host name: (see Azure portal)
 Port: (leave blank for default)
 Database: (leave blank)
 ```
