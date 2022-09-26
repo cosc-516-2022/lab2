@@ -73,11 +73,11 @@ Database: (leave blank)
 To test your database, write Java code using VS Code. The file to edit is `AzureSQL.java`.  The test file is `TestAzureSQL.java`.  Fill in the methods requested (search for **TODO**).  Marks for each method are below.  You receive the marks if you pass the JUnit tests AND have followed the requirements asked in the question (including documentation and proper formatting).
 
 - +1 mark - Write the method `connect()` to make a connection to the database.
-- +5 marks - Write the method `load()` to load the standard TPC-H data into the database. The DDL files are in the [ddl](ddl) folder. **Hint: Files are designed so can read entire file as a string and execute it as one statement. May need to divide up into batches for large files.**
+- +4 marks - Write the method `load()` to load the standard TPC-H data into the database. The DDL files are in the [ddl](ddl) folder. **Hint: Files are designed so can read entire file as a string and execute it as one statement. May need to divide up into batches for large files.**
 - +1 mark - Write the method `close()` to close the connection to the database.
 - +2 marks - Write the method `drop()` to drop all the tables in the TPC-H database.
 - +2 marks - Write the method `query1()` that returns the top 5 products by lineitem quantity for customers in the country `CANADA`.
-- +2 marks - Write the method `query2()` that ...
+- +3 marks - Write the method `query2()` that returns customers that have at least 70% more orders than the average number of orders per customer. Order by number of orders descending.
 - +2 marks - Write the method  `orderCount()` that **uses a transaction** and returns the number of orders for a given customer id.
 - +5 marks - Write the method `addOrder()` that **uses a transaction** to add an order and all lineitems to database assuming that the `ps_availqty` is >= `l_quantity` for all items that were requested to be ordered. Otherwise, transaction is denied.
 
