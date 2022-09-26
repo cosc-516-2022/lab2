@@ -73,7 +73,7 @@ Database: (leave blank)
 To test your database, write Java code using VS Code. The file to edit is `AzureSQL.java`.  The test file is `TestAzureSQL.java`.  Fill in the methods requested (search for **TODO**).  Marks for each method are below.  You receive the marks if you pass the JUnit tests AND have followed the requirements asked in the question (including documentation and proper formatting).
 
 - +1 mark - Write the method `connect()` to make a connection to the database.
-- +5 marks - Write the method `load()` to load the standard TPC-H data into the database. The DDL files are in the [ddl](ddl) folder. 
+- +5 marks - Write the method `load()` to load the standard TPC-H data into the database. The DDL files are in the [ddl](ddl) folder. **Hint: Files are designed so can read entire file as a string and execute it as one statement.**
 - +1 mark - Write the method `close()` to close the connection to the database.
 - +2 marks - Write the method `drop()` to drop all the tables in the TPC-H database.
 - +2 marks - Write the method `query1()` that ...
