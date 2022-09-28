@@ -4,7 +4,7 @@
 
 Create a Azure free tier account at: [https://azure.microsoft.com/en-us/free/](https://azure.microsoft.com/en-us/free/).
 
-The free tier account allows for free trials forever and 12-months free offers from your sign up period. You will need an email address to use. The sign-up also asks for a credit card. If you do not have a credit card, then a pre-paid credit card with a small amount should work.
+The free tier account allows for free trials forever and 12-months free offers from your sign up period. You will need an email address to use. **If you use your UBC email, you will not be asked for a credit card and may get a $250 credit.**
 
 ## Azure Portal
 
